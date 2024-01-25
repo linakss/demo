@@ -3,6 +3,7 @@ package com.example.demo;
 import com.example.demo.controller.PersonEditDialogController;
 import com.example.demo.controller.PersonOverviewController;
 import com.example.demo.model.Person;
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,16 +15,20 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
-
-    /**
-     * Данные, в виде наблюдаемого списка адресатов.
-     */
+//Здесь попытка работы с json
     private ObservableList<Person> personData = FXCollections.observableArrayList();
+    Gson gson = new Gson();
+    File file = new File("persons.txt");
+    String str = gson.toJson(personData);
+
 
     /**
      * Конструктор
