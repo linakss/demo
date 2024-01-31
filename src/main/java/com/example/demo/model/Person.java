@@ -5,6 +5,7 @@ import javafx.beans.property.*;
 import java.time.LocalDate;
 
 public class Person {
+
     private final StringProperty firstName;
     private final StringProperty lastName;
     private final StringProperty street;
@@ -31,7 +32,7 @@ public class Person {
         this.street = new SimpleStringProperty("какая-то улица");
         this.postalCode = new SimpleIntegerProperty(1234);
         this.city = new SimpleStringProperty("какой-то город");
-        this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
+        this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(2005, 2, 21));
     }
 
     public String getFirstName() {
